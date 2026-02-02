@@ -1,0 +1,10 @@
+<div class="container py-5">
+  <h1>{{ title }}</h1>
+  <p>{{ description }}</p>
+<input type="text"  placeholder="enter color" [(ngModel)]="color" class="form-control mb-3" />
+  <input type="color" [(ngModel)]="color" class="form-control mb-3" />
+  
+  <!-- LE BOUTON SAVE EST ICI ↓ -->
+  <input type="button" value="save" (click)="save()" class="btn btn-success">
+  
+</div>

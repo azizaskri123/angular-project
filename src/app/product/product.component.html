@@ -1,0 +1,101 @@
+<div class="container py-5">
+  <h2 class="mb-4 fw-bold">📱 Produits</h2>
+
+  <div class="table-responsive">
+    <table class="table table-hover table-bordered">
+      <thead class="table-dark">
+        <tr>
+          <th>ID</th>
+          <th>Nom</th>
+          <th>Prix</th>
+          <th>Stock</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of products">
+          <td>{{ product.id }}</td>
+          <td>{{ product.name }}</td>
+          <td>{{ product.price }}€</td>
+          <td>
+            <span [ngClass]="product.quantity > 5 ? 'badge bg-success' : product.quantity > 0 ? 'badge bg-warning' : 'badge bg-danger'">
+              {{ product.quantity }}
+            </span>
+          </td>
+          <td>
+            <button 
+              [disabled]="product.quantity === 0"
+              (click)="addToCart(product)" 
+              class="btn btn-sm btn-primary me-2">
+              🛒 Ajouter
+            </button>
+            <button 
+              (click)="deleteProduct(product)" 
+              class="btn btn-sm btn-danger">
+              🗑️ Supprimer
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Statistiques -->
+  <div class="row mt-5">
+    <div class="col-md-3 mb-3">
+      <div class="card bg-info text-white text-center p-4">
+        <h5>Total Produits</h5>
+        <h2>{{ products.length }}</h2>
+      </div>
+    </div>
+    <div class="col-md-3 mb-3">
+      <div class="card bg-success text-white text-center p-4">
+        <h5>Stock Total</h5>
+        <h2>{{ getTotalQuantity() }}</h2>
+      </div>
+    </div>
+    <div class="col-md-3 mb-3">
+      <div class="card bg-warning text-white text-center p-4">
+        <h5>Valeur Stock</h5>
+        <h2>{{ getTotalValue() }}€</h2>
+      </div>
+    </div>
+    <div class="col-md-3 mb-3">
+      <div class="card bg-danger text-white text-center p-4">
+        <h5>Prix Moyen</h5>
+        <h2>{{ getAveragePrice() }}€</h2>
+      </div>
+    </div>
+  </div>
+
+  <!-- Panier -->
+  <div class="mt-5" *ngIf="panier.length > 0">
+    <h3 class="fw-bold mb-3">🛒 Mon Panier ({{ panier.length }} articles)</h3>
+    <div class="table-responsive">
+      <table class="table table-striped">
+        <thead class="table-info">
+          <tr>
+            <th>Produit</th>
+            <th>Prix</th>
+            <th>Total</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of panier; let i = index">
+            <td>{{ item.name }}</td>
+            <td>{{ item.price }}€</td>
+            <td><strong>{{ item.price }}€</strong></td>
+            <td>
+              <button 
+                (click)="removeFromCart(item, i)" 
+                class="btn btn-sm btn-danger">
+                🗑️ Supprimer
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
