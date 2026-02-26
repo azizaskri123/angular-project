@@ -30,6 +30,7 @@
                 <div *ngIf="fav.statut !== 'refusee'" class="d-flex gap-2">
                   <button class="btn btn-sm btn-primary" (click)="like(fav)">👍 Like</button>
                   <button class="btn btn-sm btn-danger" (click)="removeFromFavorites(fav)">❌ Retirer</button>
+                  <button class="btn btn-sm btn-outline-secondary" [routerLink]="['/suggestion','details', fav.id]">Details</button> <!-- ajouté -->
                 </div>
               </div>
             </div>
@@ -57,6 +58,7 @@
                 <div *ngIf="s.statut !== 'refusee'" class="d-flex gap-2">
                   <button class="btn btn-sm btn-primary" (click)="like(s)">👍 Like</button>
                   <button class="btn btn-sm btn-warning" (click)="addToFavorites(s)">⭐ Ajouter aux favoris</button>
+                  <button class="btn btn-sm btn-outline-secondary" [routerLink]="['/suggestion','details', s.id]">Details</button> <!-- ajouté -->
                 </div>
               </div>
             </div>
@@ -70,3 +72,6 @@
     </div>
   </div>
 </div>
+
+<!-- router-outlet pour afficher les détails en tant qu'enfant -->
+<router-outlet></router-outlet> <!-- ajouté -->

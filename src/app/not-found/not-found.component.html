@@ -1,0 +1,51 @@
+<div class="not-found-container">
+  <div class="error-content">
+    <!-- Animated 404 -->
+    <div class="error-code">404</div>
+    
+    <h1 class="error-title">Oups ! Page non trouvée</h1>
+    <p class="error-description">
+      Désolé, la page que vous recherchez n'existe pas ou a été supprimée.
+    </p>
+
+    <!-- Decorative elements -->
+    <div class="floating-elements">
+      <div class="floating-circle circle-1"></div>
+      <div class="floating-circle circle-2"></div>
+      <div class="floating-circle circle-3"></div>
+    </div>
+
+    <!-- Illustration -->
+    <div class="illustration">
+      <i class="bi bi-exclamation-triangle-fill"></i>
+    </div>
+
+    <!-- Action buttons -->
+    <div class="action-buttons mt-5">
+      <a routerLink="/home" class="btn btn-primary btn-lg me-3 px-5">
+        <i class="bi bi-house-door-fill me-2"></i>
+        Retour à l'accueil
+      </a>
+      <a routerLink="/suggestions" class="btn btn-outline-primary btn-lg px-5">
+        <i class="bi bi-lightbulb-fill me-2"></i>
+        Voir les suggestions
+      </a>
+    </div>
+
+    <!-- Suggested pages -->
+    <div class="suggested-pages mt-5">
+      <p class="text-muted mb-3">Pages disponibles :</p>
+      <div class="suggestions-list">
+        <a routerLink="/home" class="suggestion-item">
+          <i class="bi bi-house-door-fill"></i> Accueil
+        </a>
+        <a routerLink="/products" class="suggestion-item">
+          <i class="bi bi-box-seam"></i> Produits
+        </a>
+        <a routerLink="/suggestions" class="suggestion-item">
+          <i class="bi bi-lightbulb-fill"></i> Suggestions
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

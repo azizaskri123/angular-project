@@ -7,7 +7,9 @@ import { HomeComponent } from './home/home.component';
 import { ProductComponent } from './product/product.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { ListSuggestionComponent } from './core/list-suggestion/list-suggestion.component';
+import { AppRoutingModule } from './app-routing.module';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { SuggestionModule } from './suggestion/suggestion.module';
 
 @NgModule({
   declarations: [
@@ -16,11 +18,13 @@ import { ListSuggestionComponent } from './core/list-suggestion/list-suggestion.
     ProductComponent,
     HeaderComponent,
     FooterComponent,
-    ListSuggestionComponent
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule,
+    SuggestionModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,164 @@
+/* Brand Logo Styling */
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+}
+
+.logo-icon {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.05) 100%);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 28px;
+  position: relative;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15), inset 0 1px 2px rgba(255, 255, 255, 0.2);
+  animation: logoFloat 3s ease-in-out infinite;
+}
+
+.logo-icon::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.1), transparent);
+  pointer-events: none;
+}
+
+.logo-icon i {
+  position: relative;
+  z-index: 2;
+  animation: iconGlow 2s ease-in-out infinite;
+}
+
+@keyframes logoFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes iconGlow {
+  0%, 100% {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    transform: scale(1);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+    transform: scale(1.1);
+  }
+}
+
+.brand-logo:hover .logo-icon {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.15) 100%);
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25), inset 0 1px 2px rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.brand-text {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  margin: 0;
+}
+
+.brand-title {
+  color: rgba(255, 255, 255, 0.95);
+  transition: all 0.3s ease;
+}
+
+.brand-accent {
+  background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 900;
+  animation: accentPulse 2s ease-in-out infinite;
+}
+
+@keyframes accentPulse {
+  0%, 100% {
+    filter: brightness(1);
+  }
+  50% {
+    filter: brightness(1.2);
+  }
+}
+
+.brand-logo:hover .brand-title {
+  color: white;
+}
+
+/* Navigation Links */
+.nav-item .nav-link {
+	position: relative;
+	transition: all 0.3s ease;
+	padding: 0.5rem 0.75rem !important;
+	border-radius: 5px;
+}
+
+.nav-item .nav-link::after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	width: 0;
+	height: 2px;
+	background: #fff;
+	transition: all 0.3s ease;
+	transform: translateX(-50%);
+}
+
+.nav-item .nav-link:hover {
+	background-color: rgba(255, 255, 255, 0.1);
+	transform: translateY(-2px);
+}
+
+.nav-item .nav-link:hover::after {
+	width: 80%;
+}
+
+.navbar {
+	padding: 1rem 0;
+}
+
+.nav-link .bi {
+	font-size: 1.05rem;
+	vertical-align: -0.15rem;
+}
+
+.nav-link.active {
+	background-color: rgba(255, 255, 255, 0.12);
+}
+
+/* Responsive */
+@media (max-width: 576px) {
+  .logo-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+    border-radius: 10px;
+  }
+
+  .brand-text {
+    font-size: 18px;
+    letter-spacing: 0.5px;
+  }
+}
+

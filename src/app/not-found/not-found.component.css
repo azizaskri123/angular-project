@@ -1,0 +1,272 @@
+.not-found-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.error-content {
+  text-align: center;
+  color: white;
+  position: relative;
+  z-index: 10;
+  max-width: 600px;
+}
+
+/* Animated 404 Code */
+.error-code {
+  font-size: 150px;
+  font-weight: 900;
+  margin-bottom: 20px;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+  animation: bounceIn 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  letter-spacing: 5px;
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3) translateY(-20px);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Title */
+.error-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  animation: slideInDown 0.8s ease-out;
+}
+
+@keyframes slideInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Description */
+.error-description {
+  font-size: 1.1rem;
+  margin-bottom: 40px;
+  opacity: 0.95;
+  animation: slideInUp 0.8s ease-out 0.2s both;
+}
+
+@keyframes slideInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Illustration Icon */
+.illustration {
+  font-size: 80px;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 30px 0;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+/* Floating decorative elements */
+.floating-elements {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+}
+
+.floating-circle {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.circle-1 {
+  width: 200px;
+  height: 200px;
+  top: 10%;
+  left: 10%;
+  animation: float 6s ease-in-out infinite;
+}
+
+.circle-2 {
+  width: 150px;
+  height: 150px;
+  bottom: 15%;
+  right: 10%;
+  animation: float 7s ease-in-out infinite 1s;
+}
+
+.circle-3 {
+  width: 100px;
+  height: 100px;
+  top: 50%;
+  right: 5%;
+  animation: float 8s ease-in-out infinite 2s;
+}
+
+/* Action Buttons */
+.action-buttons {
+  animation: slideInUp 0.8s ease-out 0.4s both;
+}
+
+.btn-primary {
+  background: rgba(255, 255, 255, 0.95);
+  border: none;
+  color: #667eea;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: white;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  color: #667eea;
+}
+
+.btn-outline-primary {
+  color: white;
+  border: 2px solid white;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-primary:hover {
+  background: white;
+  border-color: white;
+  color: #667eea;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Suggested Pages */
+.suggested-pages {
+  animation: slideInUp 0.8s ease-out 0.6s both;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.suggestions-list {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.suggestion-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  text-decoration: none;
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.suggestion-item:hover {
+  background: rgba(255, 255, 255, 0.25);
+  color: white;
+  transform: translateY(-2px);
+  border-color: white;
+}
+
+.suggestion-item i {
+  font-size: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .error-code {
+    font-size: 80px;
+  }
+
+  .error-title {
+    font-size: 1.8rem;
+  }
+
+  .error-description {
+    font-size: 1rem;
+  }
+
+  .btn-lg {
+    padding: 0.75rem 2rem !important;
+    font-size: 0.95rem;
+  }
+
+  .action-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .action-buttons .btn {
+    margin-right: 0 !important;
+  }
+
+  .suggested-pages {
+    padding: 20px;
+  }
+
+  .suggestions-list {
+    gap: 10px;
+  }
+
+  .suggestion-item {
+    padding: 8px 15px;
+    font-size: 0.85rem;
+  }
+
+  .circle-1 {
+    width: 100px;
+    height: 100px;
+  }
+
+  .circle-2 {
+    width: 80px;
+    height: 80px;
+  }
+
+  .circle-3 {
+    width: 60px;
+    height: 60px;
+  }
+}
